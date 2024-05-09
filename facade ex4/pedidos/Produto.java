@@ -6,6 +6,10 @@ private int codigo;
 private double preco;
 private String categoria;
 
+public Produto(String categoria){
+this.categoria = categoria;
+} 
+
 public Produto(int codigo, double preco, String categoria){
 this.codigo = codigo;
 this.preco = preco;

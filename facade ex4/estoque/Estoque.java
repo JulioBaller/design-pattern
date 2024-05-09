@@ -10,7 +10,6 @@ private Produto produto;
 private int quantidade;
 
 public Estoque(){
-lista = new ArrayList<>();
 }
 
 public Estoque(Produto produto, int quantidade){
@@ -18,10 +17,20 @@ this.produto = produto;
 this.quantidade = quantidade;
 }
 
-public void carregarEstoque(Estoque estoque){
+public List<Estoque> carregarEstoque(Estoque estoque){
 if(estoque != null){
 lista.add(estoque);
+return lista;
 }
+else{
+return lista;    
+}
+}
+
+public void exibir(){
+for(Estoque item : lista){
+System.out.println(item.getProduto().getCategoria()+" "+item.getQuantidade());   
+}    
 }
 
 public Produto getProduto() {

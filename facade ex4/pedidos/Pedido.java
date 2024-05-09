@@ -10,18 +10,23 @@ private double valorTotal;
 private List<ItemPedido> lista = new ArrayList<>();
 private Estoque estoque= new Estoque();
 
-public void adicionar(ItemPedido item){
+public List<Estoque> adicionar(List<Estoque> lista, ItemPedido item){
 if(item != null){
-estoque.carregarEstoque(new Estoque(item.getProduto(), item.getQuantidade()));
+lista = estoque.carregarEstoque(new Estoque(item.getProduto(), item.getQuantidade()));
+return lista;
+}
+else{
+return lista;    
 }
 }
 
 public List<Estoque> remover(List<Estoque> estoque, Produto produto, int quantidade){
 int cont = 0;
+
 for(Estoque item : estoque){
-if(item.getProduto() == produto){
+if(item.getProduto().getCategoria().equals(produto.getCategoria())){
 if(item.getQuantidade() <= quantidade ){
-estoque.get(cont).setQuantidade(--quantidade);    
+estoque.get(cont).setQuantidade(item.getQuantidade() - quantidade); 
 }  
 else{
 estoque.get(cont).setQuantidade(0);    
