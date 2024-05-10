@@ -4,5 +4,5 @@ import subject.Agencia;
 
 public interface Observer {
  
-    public void notificarNota(Agencia agencia);    
+    public void notificarVaga(Agencia agencia);    
 }

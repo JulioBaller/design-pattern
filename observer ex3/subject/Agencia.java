@@ -24,7 +24,7 @@ lista.add(observer);
 
 public void notificar(){
 for(Observer item : lista){
-item.notificarNota(this);
+item.notificarVaga(this);
 }
 }
 
