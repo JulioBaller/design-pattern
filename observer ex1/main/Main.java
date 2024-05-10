@@ -20,6 +20,5 @@ public class Main {
     aluno.setP1(6);
     aluno.setP2(7);
     aluno.getMedia();
-    aluno.notificar();
     }
 }

@@ -8,8 +8,8 @@ import java.util.ArrayList;
 public class Aluno implements Subject{
 
 private String nome;
-private double p1;
-private double p2;
+private double p1 = -1;
+private double p2 = -1;
 private double media;
 private List<Observer> lista= new ArrayList<>();
 
@@ -28,6 +28,7 @@ public double getP1() {
 
 public void setP1(double p1) {
     this.p1 = p1;
+    notificar();
 }
 
 public double getP2() {
@@ -36,6 +37,7 @@ public double getP2() {
 
 public void setP2(double p2) {
     this.p2 = p2;
+    notificar();
 }
 
 public String getNome() {
