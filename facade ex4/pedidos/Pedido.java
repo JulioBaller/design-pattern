@@ -1,7 +1,6 @@
 package pedidos;
 
 import java.util.List;
-import java.util.ArrayList;
 import estoque.Estoque;
 
 public class Pedido {
@@ -19,20 +18,18 @@ return lista;
 }
 }
 
-public List<Estoque> remover(List<Estoque> estoque, Produto produto, int quantidade){
+public List<Estoque> remover(List<Estoque> estoque, String produto, int quantidade){
 int cont = 0;
-
 for(Estoque item : estoque){
-if(item.getProduto().getCategoria().equals(produto.getCategoria())){
-if(item.getQuantidade() <= quantidade ){
+if(item.getProduto().getCategoria().equalsIgnoreCase(produto)){
+    
+if(item.getQuantidade() > quantidade ){
+    
 estoque.get(cont).setQuantidade(item.getQuantidade() - quantidade); 
 }  
 else{
 estoque.get(cont).setQuantidade(0);    
 }  
-}
-else{
-return estoque;    
 }
 cont++;
 }

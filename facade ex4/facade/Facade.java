@@ -30,8 +30,8 @@ public void fachadaAdicionar(ItemPedido itemPedido){
 estoque.setLista(pedido.adicionar(estoque.getLista(), itemPedido));
 }
 
-public void fachadaRemover(Produto produto, int quantidade){
-estoque.setLista(pedido.remover(estoque.getLista(), produto, quantidade));
+public void fachadaRemover( Produto produto, int quantidade){
+estoque.setLista(pedido.remover(estoque.getLista(), produto.getCategoria(), quantidade));
 } 
 
 public void fachadaExibir(List<Estoque> lista){
