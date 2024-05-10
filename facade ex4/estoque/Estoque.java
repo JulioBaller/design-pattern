@@ -5,11 +5,14 @@ import java.util.ArrayList;
 import pedidos.Produto;
 
 public class Estoque {
-private List<Estoque> lista = new ArrayList<>(); 
+private List<Estoque> lista; 
 private Produto produto;
 private int quantidade;
 
 public Estoque(){
+if(lista == null){
+lista = new ArrayList<>();
+}
 }
 
 public Estoque(Produto produto, int quantidade){

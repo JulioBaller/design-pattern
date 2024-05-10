@@ -7,8 +7,7 @@ import estoque.Estoque;
 public class Pedido {
     
 private double valorTotal;
-private List<ItemPedido> lista = new ArrayList<>();
-private Estoque estoque= new Estoque();
+private Estoque estoque = new Estoque();
 
 public List<Estoque> adicionar(List<Estoque> lista, ItemPedido item){
 if(item != null){
@@ -32,12 +31,16 @@ else{
 estoque.get(cont).setQuantidade(0);    
 }  
 }
+else{
+return estoque;    
+}
+cont++;
 }
 return estoque;
 }
 
-public double calcularTotal(){
-for(ItemPedido item : lista){
+public double calcularTotal(List<Estoque> lista){
+for(Estoque item : lista){
 valorTotal = valorTotal + item.getProduto().getPreco();
 }
 return valorTotal;
